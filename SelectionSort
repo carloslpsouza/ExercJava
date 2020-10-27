@@ -1,0 +1,41 @@
+// Ordena listas à partir do algoritmo Selection Sort o primeiro laço itera toda a lista
+// O segundo laço identifica o menor indice
+
+package dominio;
+
+public class SelectionSort {
+	
+	public static void SelectionSortCrescente(int lista[]) {
+		int i, j, menor;
+		for (i = 0; i < lista.length-1; i ++) {
+			menor = i;
+			for(j = menor + 1; j < lista.length; j ++) {
+				if(lista[j] < lista[menor]) { // verifica quem é o menor indice
+					menor = j;  // atribui o menor indice da lista a posição menor
+				}//if
+			}//for j
+			if (menor != i) {//Verifica se o indice é o indice menor, se não,pega o elemento e troca a posição
+				int tmp = lista[i];
+				lista[i] = lista[menor];
+				lista[menor] = tmp;				
+			}//if
+		}//for i
+	}//SelectionSortCrescente
+	
+	public static void SelectionSortDeCrescente(int lista[]) {
+		int i, j, menor;
+		for (i = 0; i < lista.length-1; i ++) {
+			menor = i;
+			for(j = menor + 1; j < lista.length; j ++) {
+				if(lista[j] > lista[menor]) { // verifica quem é o menor indice
+					menor = j;  // atribui o menor indice da lista a posição menor
+				}//if
+			}//for j
+			if (menor != i) {//Verifica se o indice é o indice menor, se não,pega o elemento e troca a posição
+				int tmp = lista[i];
+				lista[i] = lista[menor];
+				lista[menor] = tmp;				
+			}//if
+		}//for i
+	}//SelectionSortDeCrescente
+}//Public class
