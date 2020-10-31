@@ -1,0 +1,31 @@
+package dominio;
+
+public class ControlePilha {
+	public int pilha[];
+	public int elementos;
+	public int topo;
+	
+	public ControlePilha(int tamanho) {
+		pilha = new int[tamanho];
+		topo = -1;
+	}
+	
+	public void inserePilha(int valor) {
+		topo += 1;
+		pilha[topo] = valor;
+		System.out.println("Inserido elemento: " + valor + " na posição " + topo);
+	}//inserePilha
+	
+	public int removePilha() {
+		int novoTopo;
+		novoTopo = pilha[topo];
+		System.out.println("Removido elemento: " + topo);
+		topo -= 1;
+		return novoTopo;
+	}//removePilha
+	
+	public String numeroElementos() {
+		return ("A pilha contem: " +(topo + 1) + " elementos");
+	}//numeroElementos
+
+}//main
